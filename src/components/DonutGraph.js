@@ -3,10 +3,13 @@ import { VictoryPie, VictoryTooltip } from 'victory'
 
 const DonutGraph = props => {
   const settings = {
-    height: 350,
-    labelComponent: <VictoryTooltip />,
+    height: 375,
+    labelComponent: (
+      <VictoryTooltip style={{ fontSize: 25 }} cornerRadius={0} />
+    ),
     innerRadius: 100,
     colorScale: ['tomato', 'orange', 'gold', 'cyan', 'navy'],
+    padAngle: 3,
   }
 
   return (
