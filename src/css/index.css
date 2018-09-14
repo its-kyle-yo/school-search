@@ -1,0 +1,253 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  display: grid;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a:link {
+  text-decoration: none;
+  color: #d1e8e2;
+}
+
+a:visited {
+}
+
+a:hover {
+  color: #ffcb9a;
+}
+
+.cardSet {
+  display: grid;
+  /* grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr); */
+  grid-column-gap: 1em;
+}
+
+.card {
+  display: grid;
+  grid-template-areas:
+    'header header header'
+    'donuts   multi  map'
+    'website multi  map';
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto 1fr 1fr;
+  max-width: 1000px;
+  margin: 0 auto 20px;
+  border: 1px solid black;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-top: 0.5rem;
+}
+
+.card header {
+  background: black;
+}
+
+.card header h1 {
+  font-size: 1.5em;
+}
+
+.card header aside {
+  color: white;
+}
+
+header {
+  display: flex;
+  grid-area: header;
+  padding: 0.5em;
+  /* border-bottom: 1px solid white; */
+}
+
+header h1 {
+  margin-right: auto;
+}
+
+header aside {
+  margin-right: 1em;
+}
+
+header aside span {
+  margin-left: 0.5em;
+}
+
+.donuts {
+  display: flex;
+  grid-area: donuts;
+}
+
+.multi {
+  grid-area: multi;
+  /* border-left: 1px solid white;
+  border-right: 1px solid white; */
+}
+
+.map {
+  grid-area: map;
+}
+
+.website {
+  grid-area: website;
+}
+
+.website img {
+  display: block;
+}
+
+header[role='banner'] {
+  background-color: black;
+  color: white;
+  display: flex;
+  padding: 0;
+  top: 0;
+  position: sticky;
+  z-index: 9999999;
+}
+
+header[role='banner'] input,
+header[role='banner'] button {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  padding: 2rem;
+}
+
+header[role='banner'] input {
+  width: 100%;
+}
+
+header[role='banner'] input:focus {
+  outline: none;
+}
