@@ -1,5 +1,5 @@
 import React from 'react'
-import { VictoryChart, VictoryStack, VictoryArea } from 'victory'
+import { VictoryChart, VictoryGroup, VictoryBar } from 'victory'
 
 const formatGraphData = dataObj => {
   let dataArr = Object.keys(dataObj).map(dataLabel => {
@@ -9,19 +9,31 @@ const formatGraphData = dataObj => {
     }
   })
 
-  return dataArr
+  return dataArr.filter(item => item.y !== null)
 }
 
 const MultiGraph = props => {
   const cost_data = props.cost.net_price.public.by_income_level
   const formattedData = formatGraphData(cost_data)
-  console.log(formattedData)
+
+  if (formattedData.length === 0) {
+    return (
+      <div
+        style={{
+          gridArea: 'multi',
+          alignSelf: 'center',
+          justifySelf: 'center',
+        }}>
+        Insufficient Data
+      </div>
+    )
+  }
   return (
     <div className="multi">
       <VictoryChart>
-        <VictoryStack>
-          <VictoryArea data={formattedData} name="Avg. Net Cost" />
-        </VictoryStack>
+        <VictoryGroup colorScale={'qualitative'}>
+          <VictoryBar data={formattedData} />
+        </VictoryGroup>
       </VictoryChart>
     </div>
   )
