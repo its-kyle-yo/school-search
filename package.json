@@ -9,7 +9,7 @@
     "axios": "^0.18.0",
     "btoa": "^1.2.1",
     "firebase": "^5.5.0",
-    "lodash": "^4.17.16",
+    "lodash": "^4.17.19",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-firebaseui": "^3.0.7",
